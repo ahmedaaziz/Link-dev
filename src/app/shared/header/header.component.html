@@ -1,0 +1,90 @@
+<header class='header'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="header-features">
+          <div class="hamburger-clicker" (click)='hamburgerClicked()' >
+            <div class="hamburger" [ngClass]="status ? 'hamburger-clicked':''"></div>
+          </div>
+
+          <div class="logo">
+            <a href="#">
+              <img src="../assets/images/Link_logo_vertical_color_Light_RGB.png" alt="Logo" srcset="">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="offset-md-4 col-md-4">
+        <div id="menu">
+          <ul>
+            <li><a href=""><i class="fas fa-search"></i></a></li>
+            <li><a href=""><i class="far fa-bell"></i></a></li>
+            <li class="userName-img"><a href=""><img src="https://randomuser.me/api/portraits/men/74.jpg" alt=""> User Name</a></li>
+            <li><a href=""><i class="fas fa-cog"></i></a></li>
+          </ul>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- <p>header works!</p> -->
+
+</header>
+<div class="header-nav" [ngClass]="status ? 'moved' : 'no-move'">
+  <div class="row">
+    <div class="col-4 d-flex align-items-end justify-content-center">
+      <div class="social-links">
+        <div class="one_link">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="one_link">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="one_link">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <div class="one_link">
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="one_link">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 links-side">
+      <ul>
+        <ul class="links-side_group">
+          <li><a class="parent activeLink" href="#">Home</a></li>
+
+        </ul>
+
+        <ul class="links-side_group">
+          <li><a class="parent" href="#">About us</a></li>
+          <li><a class="child" href="#">Who are us?</a></li>
+          <li><a class="child" href="#">Why us?</a></li>
+        </ul>
+
+        <ul class="links-side_group">
+          <li><a class="parent"href="#">News</a></li>
+          <li><a class="child" href="#">News</a></li>
+          <li><a class="child" href="#">Events</a></li>
+        </ul>
+
+        <ul class="links-side_group">
+          <li><a class="parent"href="#">Careers</a></li>
+          <li><a class="child" href="#">Opportunities</a></li>
+        </ul>
+        <ul class="links-side_group">
+          <li><a class="parent"href="#">Contact Us</a></li>
+          <li><a class="parent"href="#">SiteMap</a></li>
+        </ul>
+
+
+
+      </ul>
+    </div>
+  </div>
+</div>

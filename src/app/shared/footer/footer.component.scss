@@ -1,0 +1,41 @@
+@import '../../../styles/variables/variables';
+
+footer {
+  font-size: 16px;
+  background: $grey;
+  color: #565960;
+  height: 200px;
+
+  .btn-primary {
+    background: #13BEFF;
+    border: #13BEFF;
+  }
+
+  ul {
+    li {
+      a {
+        color: #565960;
+      }
+    }
+  }
+
+  .footer_social-links {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+
+    li {
+      &:first-child {
+        margin-left: 0;
+      }
+
+      margin: 0 10px;
+    }
+  }
+
+}
+
+.copyRights {
+  background: $dark-color;
+  color: $bright-color;
+}

@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import '~swiper/swiper-bundle';
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+li {
+  list-style-type: none;
+
+  :hover {
+    text-decoration: none;
+  }
+}
+
+
+@media only screen and (min-width : 1200px) {
+
+  .container {
+    max-width: 1600px;
+  }
+
+}
+swiper {
+  width: 100%;
+  height: 625px;
+  .swiper-pagination-bullet {
+    background: #FBFBFB;
+  }
+  .swiper-pagination-bullet-active {
+    width: 12px;
+    height: 12px;
+    background:#fff !important;
+  }
+  .swiper-slide {
+    width: 100vw;
+  }
+}

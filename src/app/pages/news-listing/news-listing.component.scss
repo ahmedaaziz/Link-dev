@@ -1,0 +1,34 @@
+.post {
+  .post_container {
+    box-shadow: 1px 1px 5px 0px rgb(0 0 0 / 75%);
+    border-radius: 5px;
+}
+
+
+  .post_img {
+    padding: 1rem;
+
+    img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+
+    }
+    }
+    .post_title {
+      margin-top: 1rem;
+      padding: 1rem;
+      a {
+        h5 {
+          color: #000;
+          font-family: 'Open Sans',sans-serif;
+          font-size: 26px;
+          font-weight: 600;
+
+        }
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+}
