@@ -1,0 +1,66 @@
+.how-ai-helped {
+  background: url('../../../assets/images/how-ai-help-bg.png');
+  height: 100vh;
+  color: #fff;
+  position: relative;
+  background-size: cover;
+  overflow: hidden;
+  .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(63,63,63,0.4);
+    bottom: 0;
+    z-index: 0;
+   }
+  .how-ai-helped_data_text {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+    z-index: 1;
+
+    h1 {
+      font-size:3.5rem ;
+      font-weight: 600;
+      line-height: 5rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  .squares-container {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    margin-top: 3rem;
+  }
+  .squared-shap {
+    width: 236px;
+    height: 236px;
+    border: 3px solid #fff;
+    margin: -15px 55px;
+    text-align: center;
+    font-size: 28px;
+    transition: background ease-in 0.3s;
+    transform: rotate(45deg);
+    &:hover {
+      background: #13BEFF;
+      color: #fff;
+    }
+
+    .squared-content {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 0;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+}

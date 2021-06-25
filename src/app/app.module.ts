@@ -14,6 +14,9 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { HttpClientModule } from '@angular/common/http';
 import { GetNewsService } from './shared/services/get-news.service';
 import { ConvertObjPipe } from './shared/pipes/convert-obj.pipe';
+import { LatestNewsComponent } from './features/latest-news/latest-news.component';
+import { HowAIHelpedComponent } from './features/how-ai-helped/how-ai-helped.component';
+import { NewsDetailsComponent } from './pages/news-details/news-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ConvertObjPipe } from './shared/pipes/convert-obj.pipe';
     HeaderComponent,
     FooterComponent,
     SliderComponent,
-    ConvertObjPipe
+    ConvertObjPipe,
+    LatestNewsComponent,
+    HowAIHelpedComponent,
+    NewsDetailsComponent
   ],
   imports: [
     BrowserModule,
