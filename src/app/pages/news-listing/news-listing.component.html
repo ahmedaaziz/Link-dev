@@ -1,40 +1,60 @@
 <div class="container">
-  <div class="row">
-
     <section class="news-listing ">
+      <div class="row pt-4">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">News</li>
+          </ol>
+        </nav>
+
+      </div>
       <div class="row py-3">
         <h1> News</h1>
       </div>
       <div class="row" >
-        <div class="col-md-4 post" *ngFor='let post of posts.articles '>
-          <div class="post_container">
-            <div class="post_img">
-              <img [src]="post.urlToImage" alt="">
-            </div>
-            <div class="post_interactions">
-              <p>Show on Homepage {{post.showOnHomepage}}</p>
-            </div>
-            <div class="post_title">
-                <a href="">
-                  <h5>
-                    {{post.title}}
-                  </h5>
+          <div class="col-md-4 post" *ngFor="let post of posts.articles;let i = index" >
+            <div class="post_container" >
+              <div class="post_img">
+                <img [src]="post.urlToImage" alt="">
+              </div>
 
-                </a>
-            </div>
-            <div class="post_tag">
-              <span>News</span>
-            </div>
-            <div class="post_content">
-              <p>
-                {{post.content}}
-              </p>
-            </div>
+              <div class="post_interactions text-right m-3">
+                <span class="m-2">
+                  <a href="#" (click)='fillHeart(i)' onclick="return false;">
+                    <i class="far fa-heart" [ngClass]="clicked.includes(i) ? 'fas':'far'"></i>
 
+                    <!-- <i class="far fa-heart" [ngClass]="filled? 'fas':'far'"></i> -->
+                    <!-- <i class="far fa-heart" [ngClass]="{ 'fas': filled,' far': !filled}"></i> -->
+                    <!-- <i class="far fa-heart" [id]='i'  [ngClass]="Change()"></i> -->
+                  </a>
+                </span>
+                <span class="m-2"><a href="javascript:void(0)"><i class="fas fa-share-alt"></i></a></span>
+              </div>
+              <div class="post_title">
+                  <a href="">
+                    <h5>
+                      {{post.title}}
+                    </h5>
+
+                  </a>
+              </div>
+
+              <div class="post_tag">
+                <span>News</span>
+              </div>
+
+              <div class="post_content">
+                <p>
+                  {{post.content}}
+                </p>
+              </div>
+              <div class="post_date text-left">
+                <span class="m-2">
+                    <i class="far fa-calendar-alt"></i>
+                </span>
+                <span class="post_date__published"><b>{{ post.publishedAt | date : 'EEEE,d MMM, y' }}</b></span>
+              </div>
           </div>
-        </div>
       </div>
-    </section>
-    <!-- <app-news-listing></app-news-listing> -->
-  </div>
 </div>

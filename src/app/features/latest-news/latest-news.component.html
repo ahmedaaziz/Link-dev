@@ -1,7 +1,9 @@
 
-    <section class="news-listing ">
-      <div class="row py-3">
-        <h1> Latest News</h1>
+      <div class="row">
+        <div class="col-6">
+          <h1 class="news-listing_title my-5"> Latest News</h1>
+        </div>
+        <div class="col-6 text-right my-5 redirect-link"><span><a href="/news">View All <img src="../assets/images/icons/ic_trending_flat_24px.png" alt=""></a></span></div>
       </div>
       <div class="row" >
         <ng-container *ngFor="let post of latestPosts.articles | slice:0:3" >
@@ -47,4 +49,3 @@
       </div>
     </ng-container>
     </div>
-    </section>

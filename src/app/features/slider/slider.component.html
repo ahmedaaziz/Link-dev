@@ -1,6 +1,6 @@
 <swiper [config]="config">
   <div class="swiper-wrapper">
-    <img class="swiper-slide" *ngFor="let image of ImgObject" [src]="image.src" [alt]="image.alt" />
+    <div class="swiper-slide" *ngFor="let image of ImgObject" [ngStyle]="{'background-image': 'url(' + image.src + ')'}"></div>
       <div class="container">
         <div class="row text-center m-4">
           <div class="slider-text">

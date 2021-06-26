@@ -37,6 +37,7 @@ export class SliderComponent implements OnInit {
     },
     slidesPerView: 'auto', /* Set me! */
     spaceBetween: 0,
-    effect:'fade'
+    effect:'fade',
+
   };
 }

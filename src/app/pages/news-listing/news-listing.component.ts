@@ -9,6 +9,8 @@ import { GetNewsService } from 'src/app/shared/services/get-news.service';
 })
 export class NewsListingComponent implements OnInit {
   posts:any = [];
+  filled:boolean = false;
+  clicked:any = [];
   constructor(private _getNews: GetNewsService) { }
 
   ngOnInit(): void {
@@ -18,4 +20,13 @@ export class NewsListingComponent implements OnInit {
     });
 
   }
+  
+  fillHeart(i){
+    this.filled = !this.filled;
+    console.log(i);
+    this.clicked.push(i);
+    // console.log(this.clicked);
+
+  }
+
 }

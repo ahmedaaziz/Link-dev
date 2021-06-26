@@ -8,7 +8,7 @@ header {
   // height: 15vh;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem 0;
   position: relative;
 
   .header-features {
@@ -19,7 +19,7 @@ header {
 
   .hamburger-clicker {
     cursor: pointer;
-    width: 100px;
+    width: 50px;
     display: flex;
     height: 32px;
     align-items: center;
@@ -93,24 +93,26 @@ header {
   }
 
   #menu {
-
+    display: flex;
+    justify-content: flex-end;
     ul {
       display: flex;
       list-style-type: none;
       align-items: center;
       margin-bottom: 0;
       li {
-        margin: 0 2rem;
+        margin: 0 1rem;
         a {
           color: $bright-color;
+          white-space: nowrap;
         }
       }
       .userName-img {
         overflow: hidden;
 
         img {
-          width: 50px;
-          height: 50px;
+          width: 30px;
+          height: 30px;
           border-radius: 50%;
         }
 
@@ -134,11 +136,11 @@ header {
   left: 0;
   width: 25%;
   transition: all ease-in-out 0.4s;
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
-  -o-transform: translateX(-100%);
-  z-index: 1;
+  transform: translateX(-250%);
+  -webkit-transform: translateX(-250%);
+  -moz-transform: translateX(-250%);
+  -o-transform: translateX(-250%);
+  z-index: 4;
 
   .social-links {
     padding-bottom: 6rem;
@@ -204,5 +206,32 @@ header {
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width:768px) {
+  header {
+    #menu{
+      justify-content: flex-end;
+      ul {
+        padding-left: 0;
+        li {
+          margin: 0 0.75rem;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+@media only screen and (max-width:992px) {
+  header {
+    .header-nav {
+      width: 100%;
+      transform: translateX(-250%);
+    }
+
   }
 }
