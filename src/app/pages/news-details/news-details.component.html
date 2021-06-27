@@ -1,0 +1,33 @@
+<div class="container">
+  <section class="news-details ">
+    <div class="row pt-4">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/">News</a></li>
+          <li class="breadcrumb-item active" aria-current="page">News Details</li>
+        </ol>
+      </nav>
+
+    </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="post-coverImg">
+        <img [src]="posts.urlToImage" alt="">
+      </div>
+      <div class="post-data">
+        <p>{{category}}</p>
+        <h1>{{posts.title}}</h1>
+      </div>
+
+      <p class="post_content">
+        {{posts.content | json }}
+      </p>
+
+    </div>
+  </div>
+
+  </section>
+
+</div>

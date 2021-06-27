@@ -17,6 +17,7 @@ import { ConvertObjPipe } from './shared/pipes/convert-obj.pipe';
 import { LatestNewsComponent } from './features/latest-news/latest-news.component';
 import { HowAIHelpedComponent } from './features/how-ai-helped/how-ai-helped.component';
 import { NewsDetailsComponent } from './pages/news-details/news-details.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { NewsDetailsComponent } from './pages/news-details/news-details.componen
     ConvertObjPipe,
     LatestNewsComponent,
     HowAIHelpedComponent,
-    NewsDetailsComponent
+    NewsDetailsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
