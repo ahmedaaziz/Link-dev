@@ -6,7 +6,7 @@
         <div class="col-6 text-right my-5 redirect-link"><span><a href="/news">View All <img src="../assets/images/icons/ic_trending_flat_24px.png" alt=""></a></span></div>
       </div>
       <div class="row" >
-        <ng-container *ngFor="let post of latestPosts.articles | slice:0:3" >
+        <ng-container *ngFor="let post of latestPosts.articles | slice:0:3;let i = index;" >
           <div class="col-md-4 post" *ngIf='post.showOnHomepage'>
             <div class="post_container" >
               <div class="post_img">
@@ -15,15 +15,15 @@
 
               <div class="post_interactions text-right m-3">
                 <span class="m-2">
-                  <a href="#"  (click)='fillHeart()' onclick="return false;">
-                    <i class="far fa-heart" [ngClass]="filled? 'fas':'far'"></i>
+                  <a href="#" (click)='fillHeart(i)' onclick="return false;">
+                    <i class="far fa-heart" [ngClass]="clicked.includes(i) ? 'fas':'far'"></i>
                   </a>
                 </span>
                 <span class="m-2"><a href="javascript:void(0)"><i class="fas fa-share-alt"></i></a></span>
               </div>
               <div class="post_title">
-                  <a href="">
-                    <h5>
+                <a href="#" onclick="return false;"  (click)="onSelect(post)">
+                  <h5>
                       {{post.title}}
                     </h5>
 

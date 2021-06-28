@@ -13,4 +13,34 @@
       font-weight: bold;
     }
   }
+  .breadcrumb {
+    background: none;
+    .breadcrumb-item {
+      &:first-child {
+        &::after {
+          content: " > " !important;
+
+        }
+
+      }
+      &:nth-child(2) {
+        &::before {
+          content: "" !important;
+
+        }
+
+      }
+
+    }
+    .breadcrumb-item.active {
+
+        &::before {
+          content: ">" !important;
+
+        }
+
+
+    }
+  }
+
 }

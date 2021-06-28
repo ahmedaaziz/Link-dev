@@ -1,5 +1,5 @@
 <div class="container">
-    <section class="news-listing ">
+    <section class="news-listing">
       <div class="row pt-4">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -7,13 +7,74 @@
             <li class="breadcrumb-item active" aria-current="page">News</li>
           </ol>
         </nav>
+      </div>
+      <div class="row">
+
+        <div class="col-md-2">
+          <span class="input_label">From</span>
+          <input type="date" name="" class="form-control form-control-lg mt-2" id="">
+        </div>
+
+        <div class="col-md-2">
+          <span class="input_label">To</span>
+          <input type="date" name="" class="form-control form-control-lg mt-2" id="">
+        </div>
+
+        <div class="col-md-2">
+          <span class="input_label">Category</span>
+          <select name=""
+          #categorySelected
+          id=""
+          class="form-control form-control-lg mt-2"
+          (change)='optionChange(categorySelected.value)'>
+            <option value>Select</option>
+            <option *ngFor="let category of categories.sourceCategory" [value]="category.id">{{category.name}}</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="input-group my-4">
+            <input type="search"
+            placeholder="Search"
+            class="form-control form-control-lg mt-2"
+            [(ngModel)]="searchTerm"
+
+            #myInput
+            >
+            <div class="input-group-append mt-2">
+              <button type="button"
+              class="btn btn-primary search-btn" (click)='search()'><i class="fa fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <div class="dropdown my-4">
+            <button class="btn btn-light mt-2 "
+            type="button" id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            (click)='showDropdown()'
+            >
+              Sort by <img src="../assets/images/icons/sort by.png" alt="">
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" [ngClass]='status? "show":""'>
+              <a class="dropdown-item" href="#" onclick="return false;" (click)="sortAtoZ()" >A To Z</a>
+              <a class="dropdown-item" href="#" onclick="return false;" (click)="sortZtoA()">Z To A</a>
+            </div>
+          </div>
+
+          </div>
 
       </div>
       <div class="row py-3">
         <h1> News</h1>
       </div>
+
       <div class="row" >
-          <div class="col-md-4 post" *ngFor="let post of posts.articles;let i = index"  >
+          <div class="col-md-4 post" *ngFor="let post of posts.articles ;let i = index ; "  >
             <div class="post_container" >
               <div class="post_img">
                 <img [src]="post.urlToImage" alt="">
@@ -61,4 +122,7 @@
               </div>
           </div>
       </div>
+      </div>
+
+    </section>
 </div>

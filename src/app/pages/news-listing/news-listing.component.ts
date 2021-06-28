@@ -14,6 +14,7 @@ export class NewsListingComponent implements OnInit {
   clicked:any = [];
   sourceId:any= [];
   categories:any =[];
+  searchTerm:string = '';
   constructor(
     private _getNews: GetNewsService,
     private _router : Router
@@ -33,6 +34,9 @@ export class NewsListingComponent implements OnInit {
     })
   }
 
+
+  // Add post to favorite
+
   fillHeart(i:number){
     this.filled = !this.filled;
     console.log(i);
@@ -46,7 +50,77 @@ export class NewsListingComponent implements OnInit {
     }
   }
 
+  // Navigate post to its page
   onSelect(post){
-    this._router.navigate(['/news',post.id]);
+    this._router.navigate(['/news',post.id - 1]);
   }
+
+
+  //Change Category of News Listing
+  optionChange(value:number){
+    console.log('Selected Value', value);
+    if(!value){
+      this.ngOnInit();
+      console.log('empty');
+
+    } else {
+      // console.log('select changed');
+      this.posts.articles = this.posts.articles.filter(res => {
+          return res.sourceID == value;
+      })
+    }
+  }
+
+
+  // Keyword search in news listing
+
+  search(){
+    if(this.searchTerm == ""){
+      this.ngOnInit();
+      console.log('empty');
+
+    } else {
+      console.log('entered');
+      this.posts.articles = this.posts.articles.filter(res => {
+        // console.log(res.title.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase()));
+        return res.title.toLocaleLowerCase().match(this.searchTerm.toLocaleLowerCase());
+
+      })
+    }
+  }
+
+  // Showing Dropdown buttons when clicked
+  status:boolean = false;
+  showDropdown(){
+    this.status = !this.status;
+  }
+
+  //Sort posts a to z
+  sortAtoZ(){
+    this.status = !this.status;
+
+    this.posts.articles.sort(function (a, b) {
+      // console.log(a.title);
+      return a.title.localeCompare(b.title)
+
+
+    });
+
+  }
+  //Sort posts z to a
+
+  sortZtoA(){
+    this.status = !this.status;
+
+    this.posts.articles.sort(function (a, b) {
+      // console.log(a.title);
+      return b.title.localeCompare(a.title)
+
+
+    });
+
+  }
+
+
+
 }
